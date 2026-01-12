@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Box, Shield, Zap, Globe, Users, Play, Newspaper, Mail, Briefcase, Info, Sun, Moon, Snowflake, Factory, Truck, Microscope, HelpCircle, Download, Loader2 } from 'lucide-react';
 import JSZip from 'jszip';
-import FileSaver from 'file-saver';
+import * as FileSaver from 'file-saver';
 
 const Navbar: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -13,6 +13,23 @@ const Navbar: React.FC = () => {
   const [isBackingUp, setIsBackingUp] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const location = useLocation();
+
+  // Cross-provider file-saver helper
+  const saveAs = (blob: Blob, name: string) => {
+    if (FileSaver && (FileSaver as any).saveAs) {
+      (FileSaver as any).saveAs(blob, name);
+    } else if (typeof FileSaver === 'function') {
+      (FileSaver as any)(blob, name);
+    } else {
+      // Fallback for direct browser download if library fails
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = name;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -41,7 +58,7 @@ const Navbar: React.FC = () => {
     try {
       zip.file("README_BACKUP.txt", "Areva Automation Emergency Local Backup. Move these files to your repository manually.");
       const blob = await zip.generateAsync({ type: "blob" });
-      FileSaver.saveAs(blob, `areva_backup_${Date.now()}.zip`);
+      saveAs(blob, `areva_backup_${Date.now()}.zip`);
     } catch (e) {
       console.error("Backup failed", e);
     } finally {

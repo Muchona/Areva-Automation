@@ -20,15 +20,13 @@
           }
         }
       };
-      // Force dark mode immediately
-      document.documentElement.classList.add('dark');
       
-      // Prevent 'process is not defined' crashes in browser
-      window.process = { env: { API_KEY: "" } };
+      // Critical: Define process before any other scripts run
+      window.process = window.process || { env: { API_KEY: "" } };
+      document.documentElement.classList.add('dark');
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-      /* Fail-safe background to ensure the page is never white */
       html, body { 
         background-color: #020617 !important; 
         color: white; 
@@ -38,29 +36,30 @@
       }
       #root { min-height: 100vh; }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-    "gsap": "https://esm.sh/gsap@^3.14.2",
-    "gsap/": "https://esm.sh/gsap@^3.14.2/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
-    "three": "https://esm.sh/three@^0.182.0",
-    "html2canvas": "https://esm.sh/html2canvas@^1.4.1",
-    "jszip": "https://esm.sh/jszip@^3.10.1",
-    "file-saver": "https://esm.sh/file-saver@^2.0.5",
-    "vite": "https://esm.sh/vite@^7.3.1",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
-  }
-}
-</script>
-</head>
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+        "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+        "gsap": "https://esm.sh/gsap@^3.14.2",
+        "gsap/": "https://esm.sh/gsap@^3.14.2/",
+        "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
+        "three": "https://esm.sh/three@^0.182.0",
+        "html2canvas": "https://esm.sh/html2canvas@^1.4.1",
+        "jszip": "https://esm.sh/jszip@^3.10.1",
+        "file-saver": "https://esm.sh/file-saver@^2.0.5",
+        "vite": "https://esm.sh/vite@^7.3.1",
+        "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+      }
+    }
+    </script>
+  </head>
   <body class="bg-slate-950">
     <div id="root"></div>
+    <!-- Note: .tsx is handled by Vite during build; in local static preview it relies on dev server -->
     <script type="module" src="./index.tsx"></script>
   </body>
 </html>
