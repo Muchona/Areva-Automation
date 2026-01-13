@@ -15,8 +15,8 @@ Role: Provide technical, professional advice. Use Google Search to find recent n
 Always cite sources if Google Search grounding is used. Keep answers professional and data-driven.`;
 
 export const getWarehouseAdvice = async (history: ChatMessage[], message: string): Promise<string> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
-  
+// Replace the process.env line with this:
+const genAI = new GoogleGenAI(import.meta.env.VITE_GEMINI_API_KEY || "");  
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-3-pro-preview',
