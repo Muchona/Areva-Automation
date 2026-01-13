@@ -11,14 +11,33 @@ import CustomCursor from './components/CustomCursor.tsx';
 import Spotlight from './components/Spotlight.tsx';
 import Home from './pages/Home.tsx';
 
-// Lazy load secondary pages
+// Lazy load pages
 const About = lazy(() => import('./pages/About.tsx'));
 const Contact = lazy(() => import('./pages/Contact.tsx'));
 const Solutions = lazy(() => import('./pages/Solutions.tsx'));
 const VideoLibrary = lazy(() => import('./pages/VideoLibrary.tsx'));
 const CaseStudies = lazy(() => import('./pages/CaseStudies.tsx'));
-const ArevaTaxi = lazy(() => import('./pages/ArevaTaxi.tsx'));
+const Careers = lazy(() => import('./pages/Careers.tsx'));
+const News = lazy(() => import('./pages/News.tsx'));
+const WhyWorkWithUs = lazy(() => import('./pages/WhyWorkWithUs.tsx'));
 const EngineeringStandards = lazy(() => import('./pages/EngineeringStandards.tsx'));
+
+// Product Pages
+const ArevaTaxi = lazy(() => import('./pages/ArevaTaxi.tsx'));
+const ArevaVTU = lazy(() => import('./pages/ArevaVTU.tsx'));
+const ArevaWCS = lazy(() => import('./pages/ArevaWCS.tsx'));
+const ArevaConveyor = lazy(() => import('./pages/ArevaConveyor.tsx'));
+const ArevaRacking = lazy(() => import('./pages/ArevaRacking.tsx'));
+const AutomationSystem = lazy(() => import('./pages/AutomationSystem.tsx'));
+
+// Sector Pages
+const ColdStorage = lazy(() => import('./pages/ColdStorage.tsx'));
+const ManufacturingSector = lazy(() => import('./pages/ManufacturingSector.tsx'));
+const LogisticsSector = lazy(() => import('./pages/LogisticsSector.tsx'));
+const PharmaSector = lazy(() => import('./pages/PharmaSector.tsx'));
+
+// Service Pages
+const ConsultancyService = lazy(() => import('./pages/ConsultancyService.tsx'));
 
 const PageLoader = () => (
   <div className="h-screen flex flex-col items-center justify-center bg-slate-950">
@@ -32,12 +51,9 @@ const PageLoader = () => (
 const App: React.FC = () => {
   const [isAssistantOpen, setIsAssistantOpen] = React.useState(false);
 
-  console.log("AREVA CORE: App stack initialized.");
-
   return (
     <Router>
       <div className="min-h-screen bg-slate-950 flex flex-col relative">
-        {/* Atmosphere Layers */}
         <CustomCursor />
         <Spotlight />
         <Navbar />
@@ -45,16 +61,35 @@ const App: React.FC = () => {
         <main className="flex-grow">
           <Suspense fallback={<PageLoader />}>
             <Routes>
+              {/* Main Routes */}
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
-              <Route path="/products" element={<Solutions />} />
-              <Route path="/products/taxi" element={<ArevaTaxi />} />
-              <Route path="/videos" element={<VideoLibrary />} />
+              <Route path="/careers" element={<Careers />} />
+              <Route path="/news" element={<News />} />
+              <Route path="/why-us" element={<WhyWorkWithUs />} />
               <Route path="/cases" element={<CaseStudies />} />
+              <Route path="/videos" element={<VideoLibrary />} />
               <Route path="/engineering-standards" element={<EngineeringStandards />} />
+
+              {/* Product Routes */}
+              <Route path="/products" element={<Solutions />} />
+              <Route path="/products/system" element={<AutomationSystem />} />
+              <Route path="/products/taxi" element={<ArevaTaxi />} />
+              <Route path="/products/vtu" element={<ArevaVTU />} />
+              <Route path="/products/wcs" element={<ArevaWCS />} />
+              <Route path="/products/conveyor" element={<ArevaConveyor />} />
+              <Route path="/products/racking" element={<ArevaRacking />} />
+
+              {/* Sector Routes */}
+              <Route path="/sectors/cold-storage" element={<ColdStorage />} />
+              <Route path="/sectors/manufacturing" element={<ManufacturingSector />} />
+              <Route path="/sectors/logistics" element={<LogisticsSector />} />
+              <Route path="/sectors/pharmaceuticals" element={<PharmaSector />} />
+
+              {/* Service Routes */}
+              <Route path="/services/consultancy" element={<ConsultancyService />} />
               
-              {/* Fallback */}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Suspense>
