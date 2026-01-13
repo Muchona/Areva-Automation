@@ -65,7 +65,8 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ isOpen, setIsOpen }) => {
   const startVoiceSession = async () => {
     try {
       setIsVoiceMode(true);
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+// Replace the process.env line with this:
+const genAI = new GoogleGenAI(import.meta.env.VITE_GEMINI_API_KEY || "");
       const inputCtx = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 16000 });
       const outputCtx = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
       let nextStartTime = 0;
