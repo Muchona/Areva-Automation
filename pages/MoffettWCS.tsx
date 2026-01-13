@@ -67,4 +67,4 @@ const MoffettWCS: React.FC = () => {
   );
 };
 
-export default MoffettWCS
+export default MoffettWCS;
