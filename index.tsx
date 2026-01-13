@@ -1,8 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 // THE FIX: You MUST include the .tsx extension for the browser/Babel to find the file
-import App from './App.tsx'; 
-
+import App from './App';
 console.log("%c AREVA SYSTEM INITIALIZED ", "background: #e31e24; color: white; font-weight: bold;");
 console.log("React Version:", React.version);
 
