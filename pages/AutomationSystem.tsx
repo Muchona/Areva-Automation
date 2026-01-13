@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Zap, Maximize, Cpu, CheckCircle2 } from 'lucide-react';
-import Racking3D from '../components/Racking3D';
+import Racking3D from '../components/Racking3D.tsx';
 import { Link } from 'react-router-dom';
 
 const AutomationSystem: React.FC = () => {

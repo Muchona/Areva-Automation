@@ -5,6 +5,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Areva Automation | High-Density ASRS</title>
+    
+    <!-- Visual Debugger for GitHub Pages -->
+    <script>
+      window.onerror = function(msg, url, lineNo, columnNo, error) {
+        const debugDiv = document.createElement('div');
+        debugDiv.style.position = 'fixed';
+        debugDiv.style.top = '0';
+        debugDiv.style.left = '0';
+        debugDiv.style.width = '100%';
+        debugDiv.style.background = '#e31e24';
+        debugDiv.style.color = 'white';
+        debugDiv.style.padding = '20px';
+        debugDiv.style.zIndex = '999999';
+        debugDiv.style.fontFamily = 'monospace';
+        debugDiv.style.fontSize = '12px';
+        debugDiv.innerHTML = '<strong>AREVA BOOT ERROR:</strong> ' + msg + '<br><small>' + url + ' line ' + lineNo + '</small>';
+        document.body.appendChild(debugDiv);
+        return false;
+      };
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -21,8 +42,15 @@
         }
       };
       
-      // Critical: Define process before any other scripts run
-      window.process = window.process || { env: { API_KEY: "" } };
+      // Strict Polyfill for process.env
+      window.process = { 
+        env: { 
+          NODE_ENV: 'production',
+          API_KEY: "" 
+        } 
+      };
+      var process = window.process;
+
       document.documentElement.classList.add('dark');
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
@@ -33,6 +61,7 @@
         margin: 0; 
         padding: 0; 
         font-family: 'Inter', sans-serif;
+        min-height: 100vh;
       }
       #root { min-height: 100vh; }
     </style>
@@ -59,7 +88,6 @@
   </head>
   <body class="bg-slate-950">
     <div id="root"></div>
-    <!-- Note: .tsx is handled by Vite during build; in local static preview it relies on dev server -->
     <script type="module" src="./index.tsx"></script>
   </body>
 </html>
