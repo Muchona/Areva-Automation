@@ -1,9 +1,9 @@
 
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useState } from 'react';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
 
-// Core UI Components (Direct Import)
+// Core UI Components (Direct Import for immediate layout)
 import Navbar from './components/Navbar.tsx';
 import Footer from './components/Footer.tsx';
 import AIAssistant from './components/AIAssistant.tsx';
@@ -11,7 +11,7 @@ import CustomCursor from './components/CustomCursor.tsx';
 import Spotlight from './components/Spotlight.tsx';
 import Home from './pages/Home.tsx';
 
-// Lazy load pages
+// Lazy load pages for performance
 const About = lazy(() => import('./pages/About.tsx'));
 const Contact = lazy(() => import('./pages/Contact.tsx'));
 const Solutions = lazy(() => import('./pages/Solutions.tsx'));
@@ -43,17 +43,17 @@ const PageLoader = () => (
   <div className="h-screen flex flex-col items-center justify-center bg-slate-950">
     <Loader2 className="w-10 h-10 text-brandRed animate-spin mb-4" />
     <span className="text-[10px] font-black uppercase tracking-[0.5em] text-slate-500 text-center">
-      SYNCING AREVA SYSTEMS...
+      LOADING AREVA MODULES...
     </span>
   </div>
 );
 
 const App: React.FC = () => {
-  const [isAssistantOpen, setIsAssistantOpen] = React.useState(false);
+  const [isAssistantOpen, setIsAssistantOpen] = useState(false);
 
   return (
     <Router>
-      <div className="min-h-screen bg-slate-950 flex flex-col relative">
+      <div className="min-h-screen bg-slate-950 flex flex-col relative selection:bg-brandRed selection:text-white">
         <CustomCursor />
         <Spotlight />
         <Navbar />
@@ -90,6 +90,7 @@ const App: React.FC = () => {
               {/* Service Routes */}
               <Route path="/services/consultancy" element={<ConsultancyService />} />
               
+              {/* Catch-all */}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Suspense>

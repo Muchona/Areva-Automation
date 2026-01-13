@@ -3,19 +3,18 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 
-console.log("AREVA LOADER: Initializing React " + React.version);
+console.log("%c AREVA SYSTEM INITIALIZED ", "background: #e31e24; color: white; font-weight: bold;");
+console.log("React Version:", React.version);
 
-const rootElement = document.getElementById('root');
+const container = document.getElementById('root');
 
-if (rootElement) {
-  const root = createRoot(rootElement);
+if (container) {
+  const root = createRoot(container);
   root.render(
     <React.StrictMode>
       <App />
     </React.StrictMode>
   );
 } else {
-  const errorMsg = "CRITICAL FAULT: Root element 'root' not found.";
-  console.error(errorMsg);
-  document.body.innerHTML = `<div style="color:white; background:#e31e24; padding:20px; font-family:sans-serif;">${errorMsg}</div>`;
+  console.error("FATAL: Root element not found.");
 }
