@@ -1,9 +1,8 @@
-
 import React, { Suspense, lazy, useState } from 'react';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
 
-// Core UI Components (Direct Import for immediate layout)
+// Core UI Components
 import Navbar from './components/Navbar.tsx';
 import Footer from './components/Footer.tsx';
 import AIAssistant from './components/AIAssistant.tsx';
@@ -11,7 +10,7 @@ import CustomCursor from './components/CustomCursor.tsx';
 import Spotlight from './components/Spotlight.tsx';
 import Home from './pages/Home.tsx';
 
-// Lazy load pages for performance
+// Lazy load pages
 const About = lazy(() => import('./pages/About.tsx'));
 const Contact = lazy(() => import('./pages/Contact.tsx'));
 const Solutions = lazy(() => import('./pages/Solutions.tsx'));
@@ -48,6 +47,7 @@ const PageLoader = () => (
   </div>
 );
 
+// The One and Only Elite App Component
 const App: React.FC = () => {
   const [isAssistantOpen, setIsAssistantOpen] = useState(false);
 
@@ -61,7 +61,6 @@ const App: React.FC = () => {
         <main className="flex-grow">
           <Suspense fallback={<PageLoader />}>
             <Routes>
-              {/* Main Routes */}
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
@@ -71,8 +70,6 @@ const App: React.FC = () => {
               <Route path="/cases" element={<CaseStudies />} />
               <Route path="/videos" element={<VideoLibrary />} />
               <Route path="/engineering-standards" element={<EngineeringStandards />} />
-
-              {/* Product Routes */}
               <Route path="/products" element={<Solutions />} />
               <Route path="/products/system" element={<AutomationSystem />} />
               <Route path="/products/taxi" element={<ArevaTaxi />} />
@@ -80,17 +77,11 @@ const App: React.FC = () => {
               <Route path="/products/wcs" element={<ArevaWCS />} />
               <Route path="/products/conveyor" element={<ArevaConveyor />} />
               <Route path="/products/racking" element={<ArevaRacking />} />
-
-              {/* Sector Routes */}
               <Route path="/sectors/cold-storage" element={<ColdStorage />} />
               <Route path="/sectors/manufacturing" element={<ManufacturingSector />} />
               <Route path="/sectors/logistics" element={<LogisticsSector />} />
               <Route path="/sectors/pharmaceuticals" element={<PharmaSector />} />
-
-              {/* Service Routes */}
               <Route path="/services/consultancy" element={<ConsultancyService />} />
-              
-              {/* Catch-all */}
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Suspense>
@@ -103,10 +94,4 @@ const App: React.FC = () => {
   );
 };
 
-function App() {  // Lowercase 'pp'
-  return (
-    <div>Areva Automation Core</div>
-  );
-}
-
-export default App
+export default App;
