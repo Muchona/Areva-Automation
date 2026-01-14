@@ -1,4 +1,4 @@
-
+import Home from './pages/Home';
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronRight, Activity, ShieldCheck, Zap } from 'lucide-react';
