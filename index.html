@@ -8,18 +8,20 @@
     
     <!-- Tailwind CSS (CDN kept for portability, usually moved to build step in full scale apps) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              brandRed: { DEFAULT: '#e31e24' }
-            }
-          }
+   <script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          brandRed: { DEFAULT: '#e31e24' }
         }
-      };
-    </script>
+      }
+    }
+  };
+  // PASTE YOUR KEY BELOW
+  window.process = { env: { NODE_ENV: 'production', API_KEY: "AIzaSyDhkbgUn-55SN4UESc050SdQ8Hgt4GOF14" } };
+</script>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     
