@@ -1,8 +1,9 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Cpu, Share2, Eye, LineChart, ShieldCheck, Workflow, ArrowRight } from 'lucide-react';
 
-const MoffettWCS: React.FC = () => {
+const ArevaWCS: React.FC = () => {
   return (
     <div className="bg-slate-950 text-white pt-32">
       <section className="relative py-24 px-4 overflow-hidden border-b border-slate-900">
@@ -14,7 +15,7 @@ const MoffettWCS: React.FC = () => {
                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-cyan-500">The System Brain</span>
               </div>
               <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.9]">
-                MOFFETT <br />
+                AREVA <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-200">WCS™.</span>
               </h1>
               <p className="text-xl text-slate-400 font-medium leading-relaxed max-w-xl">
@@ -30,19 +31,17 @@ const MoffettWCS: React.FC = () => {
                 </Link>
               </div>
             </div>
-
-            {/* TERMINAL SIMULATION: Fixed with String Escaping for Vercel */}
             <div className="bg-slate-900 rounded-[40px] border border-slate-800 p-10 font-mono text-sm overflow-hidden relative">
               <div className="space-y-2 opacity-80">
-                <p className="text-green-500">{" >>> "} INITIALIZING MoffettWCS_SystemCore_v4...</p>
-                <p className="text-slate-400">{" >>> "} Establishing link with 48 active shuttles...</p>
-                <p className="text-cyan-500">{" >>> "} [WCS] Node_01: ONLINE</p>
-                <p className="text-cyan-500">{" >>> "} [WCS] Node_02: ONLINE</p>
-                <p className="text-slate-400">{" >>> "} Pathfinding mesh update: 1,429 routes calculated.</p>
-                <p className="text-slate-500">{" >>> "} PALLET_MOVE_REQUEST_ID_88301... SUCCESS</p>
+                <p className="text-green-500">>>> INITIALIZING ArevaWCS_SystemCore_v4...</p>
+                <p className="text-slate-400">>>> Establishing link with 48 active shuttles...</p>
+                <p className="text-cyan-500">>>> [WCS] Node_01: ONLINE</p>
+                <p className="text-cyan-500">>>> [WCS] Node_02: ONLINE</p>
+                <p className="text-slate-400">>>> Pathfinding mesh update: 1,429 routes calculated.</p>
+                <p className="text-slate-500">>>> PALLET_MOVE_REQUEST_ID_88301... SUCCESS</p>
                 <p className="animate-pulse">_</p>
               </div>
-            </div>
+           </div>
           </div>
         </div>
       </section>
@@ -67,4 +66,4 @@ const MoffettWCS: React.FC = () => {
   );
 };
 
-export default MoffettWCS;
+export default ArevaWCS;

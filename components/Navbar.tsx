@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Box, Shield, Zap, Globe, Users, Play, Newspaper, Mail, Briefcase, Info, Sun, Moon, Snowflake, Factory, Truck, Microscope, HelpCircle, Download, Loader2 } from 'lucide-react';
 import JSZip from 'jszip';
-import FileSaver from 'file-saver';
+import * as FileSaver from 'file-saver';
 
 const Navbar: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);

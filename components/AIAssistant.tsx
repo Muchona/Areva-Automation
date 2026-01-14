@@ -1,11 +1,5 @@
-/// <reference types="vite/client" />
-/// <reference types="vite/client" />
-import React, { useState, useEffect, useRef } from 'react';
-import { GoogleGenAI } from "@google/genai";
 
-// This tells the compiler the key will exist in Vercel
-const apiKey = import.meta.env.VITE_GEMINI_API_KEY || "";
-const genAI = new GoogleGenAI(apiKey);
+import React, { useState, useRef, useEffect } from 'react';
 import { X, Send, Bot, Loader2, Sparkles, Mic, Waves } from 'lucide-react';
 import { GoogleGenAI, LiveServerMessage, Modality } from '@google/genai';
 import { ChatMessage, MessageRole } from '../types.ts';
@@ -71,8 +65,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ isOpen, setIsOpen }) => {
   const startVoiceSession = async () => {
     try {
       setIsVoiceMode(true);
-// Replace the process.env line with this:
-const genAI = new GoogleGenAI(import.meta.env.VITE_GEMINI_API_KEY || "");
+      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
       const inputCtx = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 16000 });
       const outputCtx = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
       let nextStartTime = 0;

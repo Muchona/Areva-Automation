@@ -1,40 +1,70 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" class="dark">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Areva Automation | High-Density ASRS</title>
     
+    <!-- Tailwind CSS (CDN kept for portability, usually moved to build step in full scale apps) -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <script type="importmap">
-    {
-      "imports": {
-        "react": "https://esm.sh/react@19.0.0",
-        "react-dom": "https://esm.sh/react-dom@19.0.0",
-        "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
-        "react-router-dom": "https://esm.sh/react-router-dom@6.22.3?deps=react@19.0.0,react-dom@19.0.0",
-        "lucide-react": "https://esm.sh/lucide-react@0.460.0?deps=react@19.0.0",
-        "gsap": "https://esm.sh/gsap@3.12.5",
-        "gsap/ScrollTrigger": "https://esm.sh/gsap@3.12.5/ScrollTrigger",
-        "three": "https://esm.sh/three@0.173.0",
-        "jszip": "https://esm.sh/jszip@3.10.1",
-        "file-saver": "https://esm.sh/file-saver@2.0.5",
-        "@google/genai": "https://esm.sh/@google/genai@0.2.1"
-      }
-    }
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brandRed: { DEFAULT: '#e31e24' }
+            }
+          }
+        }
+      };
     </script>
-
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
     <style>
-      body { background-color: #020617 !important; color: #e31e24 !important; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; font-family: sans-serif; }
-      #root:empty::before { content: "AREVA CORE INITIALIZING..."; animation: pulse 1s infinite; font-weight: 900; }
-      @keyframes pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+      body { background-color: #020617; color: white; font-family: 'Inter', sans-serif; margin: 0; }
+      
+      /* Initial Boot Loader */
+      #root:empty::before {
+        content: "INITIALIZING AREVA CORE...";
+        position: fixed;
+        top: 50%; left: 50%; transform: translate(-50%, -50%);
+        font-size: 10px; font-weight: 900; letter-spacing: 0.5em; color: #e31e24;
+        animation: pulse 1.5s infinite;
+      }
+      @keyframes pulse { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
+      
+      /* Scrollbar */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #020617; }
+      ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+      ::-webkit-scrollbar-thumb:hover { background: #e31e24; }
     </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
+    "gsap": "https://esm.sh/gsap@^3.14.2",
+    "gsap/": "https://esm.sh/gsap@^3.14.2/",
+    "three": "https://esm.sh/three@^0.182.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
+    "jszip": "https://esm.sh/jszip@^3.10.1",
+    "html2canvas": "https://esm.sh/html2canvas@^1.4.1",
+    "file-saver": "https://esm.sh/file-saver@^2.0.5"
+  }
+}
+</script>
 </head>
-<body>
+  <body>
     <div id="root"></div>
-
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script type="text/babel" data-type="module" src="./index.tsx"></script>
-</body>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>

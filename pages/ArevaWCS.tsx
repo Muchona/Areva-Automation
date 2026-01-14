@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Cpu, Share2, Eye, LineChart, ShieldCheck, Workflow, ArrowRight } from 'lucide-react';
@@ -30,19 +31,17 @@ const ArevaWCS: React.FC = () => {
                 </Link>
               </div>
             </div>
-
-            {/* TERMINAL SECTION: Fixed with String Escaping for Vercel */}
             <div className="bg-slate-900 rounded-[40px] border border-slate-800 p-10 font-mono text-sm overflow-hidden relative">
               <div className="space-y-2 opacity-80">
-                <p className="text-green-500">{" >>> "} INITIALIZING ArevaWCS_SystemCore_v4...</p>
-                <p className="text-slate-400">{" >>> "} Establishing link with 48 active shuttles...</p>
-                <p className="text-cyan-500">{" >>> "} [WCS] Node_01: ONLINE</p>
-                <p className="text-cyan-500">{" >>> "} [WCS] Node_02: ONLINE</p>
-                <p className="text-slate-400">{" >>> "} Pathfinding mesh update: 1,429 routes calculated.</p>
-                <p className="text-slate-500">{" >>> "} PALLET_MOVE_REQUEST_ID_88301... SUCCESS</p>
+                <p className="text-green-500">>>> INITIALIZING ArevaWCS_SystemCore_v4...</p>
+                <p className="text-slate-400">>>> Establishing link with 48 active shuttles...</p>
+                <p className="text-cyan-500">>>> [WCS] Node_01: ONLINE</p>
+                <p className="text-cyan-500">>>> [WCS] Node_02: ONLINE</p>
+                <p className="text-slate-400">>>> Pathfinding mesh update: 1,429 routes calculated.</p>
+                <p className="text-slate-500">>>> PALLET_MOVE_REQUEST_ID_88301... SUCCESS</p>
                 <p className="animate-pulse">_</p>
               </div>
-            </div>
+           </div>
           </div>
         </div>
       </section>
