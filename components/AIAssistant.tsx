@@ -1,5 +1,11 @@
+/// <reference types="vite/client" />
+/// <reference types="vite/client" />
+import React, { useState, useEffect, useRef } from 'react';
+import { GoogleGenAI } from "@google/genai";
 
-import React, { useState, useRef, useEffect } from 'react';
+// This tells the compiler the key will exist in Vercel
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY || "";
+const genAI = new GoogleGenAI(apiKey);
 import { X, Send, Bot, Loader2, Sparkles, Mic, Waves } from 'lucide-react';
 import { GoogleGenAI, LiveServerMessage, Modality } from '@google/genai';
 import { ChatMessage, MessageRole } from '../types.ts';
