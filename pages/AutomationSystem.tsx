@@ -1,4 +1,4 @@
-
+import Home from './pages/Home';
 import React from 'react';
 import { Zap, Maximize, Cpu, CheckCircle2 } from 'lucide-react';
 import Racking3D from '../components/Racking3D.tsx';
