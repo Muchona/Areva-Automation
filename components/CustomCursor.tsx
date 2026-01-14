@@ -38,8 +38,8 @@ const CustomCursor: React.FC = () => {
       gsap.to(dot, { scale: 0, opacity: 0, duration: 0.2 });
       gsap.to(ring, { 
         scale: 1.5, 
-        backgroundColor: "rgba(227, 30, 36, 0.15)", 
-        borderColor: "rgba(227, 30, 36, 0.5)",
+        backgroundColor: "rgba(163, 230, 53, 0.15)", 
+        borderColor: "rgba(163, 230, 53, 0.5)",
         borderWidth: "1px",
         duration: 0.3 
       });
@@ -50,7 +50,7 @@ const CustomCursor: React.FC = () => {
       gsap.to(ring, { 
         scale: 1, 
         backgroundColor: "transparent", 
-        borderColor: "#e31e24",
+        borderColor: "#A3E635",
         borderWidth: "2px",
         duration: 0.3 
       });

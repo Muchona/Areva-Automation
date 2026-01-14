@@ -53,7 +53,7 @@ const Spotlight: React.FC = () => {
         ref={spotlightRef}
         className="absolute w-[800px] h-[800px] rounded-full opacity-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(227, 30, 36, 0.1) 0%, rgba(227, 30, 36, 0.03) 40%, transparent 75%)',
+          background: 'radial-gradient(circle, rgba(163, 230, 53, 0.1) 0%, rgba(163, 230, 53, 0.03) 40%, transparent 75%)',
           willChange: 'transform',
           filter: 'blur(60px)',
           mixBlendMode: 'screen'
@@ -65,7 +65,7 @@ const Spotlight: React.FC = () => {
         ref={coreRef}
         className="absolute w-[200px] h-[200px] rounded-full opacity-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(227, 30, 36, 0.05) 50%, transparent 100%)',
+          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(163, 230, 53, 0.05) 50%, transparent 100%)',
           willChange: 'transform',
           filter: 'blur(25px)',
           mixBlendMode: 'plus-lighter'

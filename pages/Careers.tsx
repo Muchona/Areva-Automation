@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Briefcase, Users, Target, Rocket, ArrowRight, Globe, Zap, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -34,8 +33,8 @@ const Careers: React.FC = () => {
             { icon: <Zap />, title: "Velocity", text: "We work fast, iterate often, and deploy systems that solve real problems." },
             { icon: <Heart />, title: "Heritage", text: "Our Irish roots drive our global ambition and community focus." }
           ].map((v, i) => (
-            <div key={i} className="p-10 bg-slate-900 border border-slate-800 rounded-[40px] hover:border-brandRed/30 transition-all">
-              <div className="text-brandRed mb-6">{v.icon}</div>
+            <div key={i} className="p-10 bg-slate-900 border border-slate-800 rounded-[40px] hover:border-brandRed/30 transition-all group">
+              <div className="text-brandRed group-hover:text-black group-hover:bg-brandRed p-4 rounded-2xl mb-6 w-fit transition-colors">{v.icon}</div>
               <h3 className="text-2xl font-black mb-4 uppercase tracking-tight">{v.title}</h3>
               <p className="text-slate-400 text-sm leading-relaxed">{v.text}</p>
             </div>
@@ -62,7 +61,7 @@ const Careers: React.FC = () => {
                     <span className="flex items-center"><Briefcase className="w-3 h-3 mr-2" /> {job.type}</span>
                   </div>
                 </div>
-                <Link to="/contact" className="w-full md:w-auto bg-white/5 hover:bg-white/10 px-8 py-4 rounded-2xl border border-white/10 transition-all text-sm font-black uppercase tracking-widest text-center">
+                <Link to="/contact" className="w-full md:w-auto bg-white/5 hover:bg-brandRed hover:text-black px-8 py-4 rounded-2xl border border-white/10 transition-all text-sm font-black uppercase tracking-widest text-center">
                   Apply Now
                 </Link>
               </div>
@@ -71,12 +70,12 @@ const Careers: React.FC = () => {
         </section>
 
         {/* Perks Section */}
-        <section className="mt-32 p-12 md:p-24 bg-brandRed rounded-[60px] relative overflow-hidden group">
+        <section className="mt-32 p-12 md:p-24 bg-brandRed text-black rounded-[60px] relative overflow-hidden group">
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
           <div className="relative z-10 text-center space-y-8">
             <h2 className="text-4xl md:text-6xl font-black tracking-tight uppercase">NOT READY <br />YET?</h2>
-            <p className="text-xl text-brandRed-100 font-bold max-w-xl mx-auto">Follow our journey on LinkedIn to see life at Areva Automation and get alerts for future openings.</p>
-            <a href="#" className="inline-flex items-center space-x-3 bg-white text-slate-950 px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:scale-105 transition-all">
+            <p className="text-xl font-bold max-w-xl mx-auto opacity-80">Follow our journey on LinkedIn to see life at Areva Automation and get alerts for future openings.</p>
+            <a href="#" className="inline-flex items-center space-x-3 bg-slate-950 text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:scale-105 transition-all">
               <span>Visit LinkedIn</span>
               <ArrowRight className="w-6 h-6" />
             </a>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Zap, Maximize, Cpu, CheckCircle2 } from 'lucide-react';
 import Racking3D from '../components/Racking3D.tsx';
@@ -15,7 +14,7 @@ const AutomationSystem: React.FC = () => {
               Our integrated system architecture combines hardware precision with software intelligence to deliver the world's most dense storage solution.
             </p>
             <div className="flex space-x-4">
-              <Link to="/contact" className="bg-brandRed px-10 py-5 rounded-2xl font-black text-lg">Request Site Audit</Link>
+              <Link to="/contact" className="bg-brandRed text-black px-10 py-5 rounded-2xl font-black text-lg">Request Site Audit</Link>
             </div>
           </div>
           <div className="bg-slate-900 rounded-[60px] border border-slate-800 p-8 shadow-2xl relative overflow-hidden">
@@ -32,8 +31,8 @@ const AutomationSystem: React.FC = () => {
             { title: "Areva VTU™", icon: <Maximize />, desc: "High-throughput lifts bridging storage tiers in seconds." },
             { title: "Areva WCS™", icon: <Cpu />, desc: "Software brain optimizing SKU placement for velocity." }
           ].map((item, i) => (
-            <div key={i} className="bg-slate-900 p-10 rounded-[40px] border border-slate-800 hover:border-brandRed/40 transition-all">
-              <div className="text-brandRed mb-8">{item.icon}</div>
+            <div key={i} className="bg-slate-900 p-10 rounded-[40px] border border-slate-800 hover:border-brandRed/40 transition-all group">
+              <div className="text-brandRed group-hover:bg-brandRed group-hover:text-black p-4 rounded-2xl mb-8 w-fit transition-colors">{item.icon}</div>
               <h3 className="text-2xl font-black mb-4 uppercase">{item.title}</h3>
               <p className="text-slate-400 mb-8">{item.desc}</p>
               <CheckCircle2 className="w-6 h-6 text-brandRed" />

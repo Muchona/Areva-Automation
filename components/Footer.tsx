@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Box, Mail, Phone, MapPin, Linkedin, Twitter, Instagram, ArrowUp, Globe, ChevronRight } from 'lucide-react';
@@ -60,7 +59,7 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-5 space-y-8">
             <Link to="/" className="flex items-center space-x-3 group">
               <div className="bg-brandRed p-2 rounded-xl group-hover:scale-110 transition-transform">
-                <Box className="w-8 h-8 text-white" />
+                <Box className="w-8 h-8 text-black" />
               </div>
               <span className="text-2xl font-black text-white tracking-tighter uppercase">
                 AREVA<span className="text-brandRed">AUTOMATION</span>
@@ -101,7 +100,7 @@ const Footer: React.FC = () => {
                     placeholder="Enter business email" 
                     className="w-full bg-slate-950 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-brandRed transition-all"
                   />
-                  <button className="absolute right-2 top-2 bottom-2 bg-brandRed text-white px-6 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-brandRed/90 transition-all shadow-lg shadow-brandRed/20">
+                  <button className="absolute right-2 top-2 bottom-2 bg-brandRed text-black px-6 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-brandRed/90 transition-all shadow-lg shadow-brandRed/20">
                     Join List
                   </button>
                 </div>
@@ -185,7 +184,7 @@ const Footer: React.FC = () => {
             </div>
             <button 
               onClick={scrollToTop}
-              className="w-12 h-12 rounded-full bg-brandRed text-white flex items-center justify-center hover:scale-110 hover:-translate-y-1 active:scale-95 transition-all shadow-xl shadow-brandRed/20 group"
+              className="w-12 h-12 rounded-full bg-brandRed text-black flex items-center justify-center hover:scale-110 hover:-translate-y-1 active:scale-95 transition-all shadow-xl shadow-brandRed/20 group"
               aria-label="Back to Top"
             >
               <ArrowUp className="w-6 h-6 group-hover:animate-bounce" />

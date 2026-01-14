@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { GoogleGenAI, Type } from "@google/genai";
 import { X, Calculator, Loader2, TrendingUp, DollarSign, ShieldCheck } from 'lucide-react';
@@ -90,7 +89,7 @@ const Simulator: React.FC<SimulatorProps> = ({ onClose }) => {
               <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">Pallet Positions</label>
               <input type="number" value={formData.pallets} onChange={e => setFormData({...formData, pallets: parseInt(e.target.value)})} className="w-full bg-slate-900/50 border border-white/10 rounded-2xl px-8 py-5 text-white font-bold outline-none" />
             </div>
-            <button onClick={runSimulation} disabled={loading} className="w-full bg-brandRed hover:bg-brandRed/90 text-white py-6 rounded-3xl font-black text-xl flex items-center justify-center space-x-4 transition-all">
+            <button onClick={runSimulation} disabled={loading} className="w-full bg-brandRed hover:bg-brandRed/90 text-black py-6 rounded-3xl font-black text-xl flex items-center justify-center space-x-4 transition-all">
               {loading ? <Loader2 className="animate-spin w-7 h-7" /> : <Calculator className="w-7 h-7" />}
               <span>{loading ? 'Audit in Progress' : 'Generate Audit'}</span>
             </button>

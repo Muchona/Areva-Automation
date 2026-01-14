@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowUpRight, ThermometerSnowflake, Boxes, Warehouse } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -51,7 +50,7 @@ const CaseStudies: React.FC = () => {
                     <p className="text-4xl font-black text-white">{item.result}</p>
                     <p className="text-[10px] text-slate-500 uppercase font-black tracking-widest">Key Performance Metric</p>
                   </div>
-                  <button className="bg-slate-800 p-5 rounded-3xl group-hover:bg-brandRed group-hover:text-white transition-all">
+                  <button className="bg-slate-800 p-5 rounded-3xl group-hover:bg-brandRed group-hover:text-black transition-all">
                     <ArrowUpRight className="w-6 h-6" />
                   </button>
                 </div>
@@ -64,7 +63,7 @@ const CaseStudies: React.FC = () => {
           <div className="absolute inset-0 bg-brandRed/5 pointer-events-none blur-[120px]"></div>
           <h2 className="text-4xl md:text-6xl font-black mb-8 uppercase italic tracking-tighter">Ready to reclaim your space?</h2>
           <p className="text-slate-400 mb-12 max-w-2xl mx-auto font-medium text-lg leading-relaxed">Our engineering team can show you exactly how much density you can gain with a custom-engineered Areva system.</p>
-          <Link to="/contact" className="bg-brandRed hover:bg-brandRed/90 text-white px-12 py-6 rounded-2xl font-black text-xl transition-all inline-block shadow-2xl shadow-brandRed/40 uppercase italic">
+          <Link to="/contact" className="bg-brandRed hover:bg-brandRed/90 text-black px-12 py-6 rounded-2xl font-black text-xl transition-all inline-block shadow-2xl shadow-brandRed/40 uppercase italic">
             Request Site Audit
           </Link>
         </div>

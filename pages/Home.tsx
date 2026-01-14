@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronRight, Activity, ShieldCheck, Zap } from 'lucide-react';
@@ -60,7 +59,7 @@ const Home: React.FC = () => {
               </p>
 
               <div className="hero-text flex flex-wrap gap-4">
-                <Link to="/contact" className="bg-brandRed text-white px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-2xl shadow-brandRed/30">
+                <Link to="/contact" className="bg-brandRed text-black px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-2xl shadow-brandRed/30">
                   Request Site Audit
                 </Link>
                 <Link to="/products" className="bg-white/5 backdrop-blur-md border border-white/10 text-white px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-white/10 transition-all">
@@ -119,7 +118,7 @@ const Home: React.FC = () => {
           <p className="text-xl text-slate-400 font-medium max-w-2xl mx-auto leading-relaxed">
             Our engineers provide detailed site audits to show you exactly how much storage density you can gain.
           </p>
-          <Link to="/contact" className="inline-flex items-center space-x-4 bg-brandRed text-white px-12 py-6 rounded-3xl font-black text-xl uppercase italic hover:scale-105 transition-all shadow-2xl shadow-brandRed/40">
+          <Link to="/contact" className="inline-flex items-center space-x-4 bg-brandRed text-black px-12 py-6 rounded-3xl font-black text-xl uppercase italic hover:scale-105 transition-all shadow-2xl shadow-brandRed/40">
             <span>Get Started</span>
             <ArrowRight className="w-6 h-6" />
           </Link>

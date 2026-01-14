@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, Box, Shield, Zap, Globe, Users, Play, Newspaper, Mail, Briefcase, Info, Sun, Moon, Snowflake, Factory, Truck, Microscope, HelpCircle, Download, Loader2, Wrench, Settings } from 'lucide-react';
@@ -135,7 +134,7 @@ const Navbar: React.FC = () => {
           <div className="flex justify-between items-center h-12">
             <Link to="/" onClick={() => setMobileOpen(false)} className="flex items-center space-x-2 group shrink-0">
               <div className="bg-brandRed p-1.5 rounded-lg group-hover:bg-brandRed/80 transition-colors shadow-lg shadow-brandRed/20">
-                <Box className="w-6 h-6 text-white" />
+                <Box className="w-6 h-6 text-black" />
               </div>
               <span className="text-lg sm:text-xl font-black tracking-tight text-slate-900 dark:text-white uppercase">
                 AREVA<span className="text-brandRed">AUTOMATION</span>
@@ -168,7 +167,7 @@ const Navbar: React.FC = () => {
               <button onClick={toggleTheme} className="ml-2 p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-brandRed dark:hover:text-brandRed transition-all">
                 {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
               </button>
-              <Link to="/contact" className="ml-4 bg-brandRed hover:bg-brandRed/90 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-brandRed/20 active:scale-95">Get a Quote</Link>
+              <Link to="/contact" className="ml-4 bg-brandRed hover:bg-brandRed/90 text-black px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-brandRed/20 active:scale-95">Get a Quote</Link>
             </div>
 
             <div className="flex items-center lg:hidden space-x-1 sm:space-x-2">
@@ -209,7 +208,7 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="mt-auto space-y-4 pt-8">
-            <Link to="/contact" className="w-full block text-center bg-brandRed text-white py-4 rounded-2xl font-black text-sm uppercase tracking-widest shadow-lg shadow-brandRed/20">
+            <Link to="/contact" className="w-full block text-center bg-brandRed text-black py-4 rounded-2xl font-black text-sm uppercase tracking-widest shadow-lg shadow-brandRed/20">
               Get a Quote
             </Link>
             <p className="text-center text-[10px] font-black uppercase tracking-widest text-slate-500">

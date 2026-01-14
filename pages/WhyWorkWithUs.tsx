@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -50,7 +49,7 @@ const WhyWorkWithUs: React.FC = () => {
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
           {benefits.map((benefit, i) => (
             <div key={i} className="group flex flex-col p-6 sm:p-8 bg-slate-900/50 border border-slate-800 rounded-[28px] md:rounded-[32px] hover:border-brandRed/50 transition-all duration-300 hover:bg-slate-900 h-full">
-              <div className="inline-flex p-3 bg-slate-950 rounded-2xl border border-slate-800 text-brandRed group-hover:scale-110 transition-transform mb-6 w-fit">
+              <div className="inline-flex p-3 bg-slate-950 rounded-2xl border border-slate-800 text-brandRed group-hover:scale-110 group-hover:bg-brandRed group-hover:text-black transition-all mb-6 w-fit">
                 {benefit.icon}
               </div>
               <div className="flex-grow">
@@ -74,9 +73,9 @@ const WhyWorkWithUs: React.FC = () => {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-                <Link to="/contact" className="bg-brandRed hover:bg-brandRed/90 text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-widest transition-all shadow-xl shadow-brandRed/20 flex items-center justify-center group/btn">
+                <Link to="/contact" className="bg-brandRed hover:bg-brandRed/90 text-black px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-widest transition-all shadow-xl shadow-brandRed/20 flex items-center justify-center group/btn">
                   Request Site Audit
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 w-5 h-5 text-black group-hover/btn:translate-x-1 transition-transform" />
                 </Link>
                 <Link to="/products/system" className="border border-slate-700 hover:bg-white/5 text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-widest transition-all flex items-center justify-center group">
                   Hardware Specs

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Phone } from 'lucide-react';
 
@@ -43,7 +42,7 @@ const Contact: React.FC = () => {
                 <label className="text-[10px] font-black uppercase text-slate-400 ml-4 tracking-widest">The Challenge</label>
                 <textarea rows={4} className="w-full bg-slate-100 rounded-2xl px-6 py-5 outline-none focus:ring-2 focus:ring-brandRed font-bold" placeholder="Describe your SKU density challenges..."></textarea>
               </div>
-              <button className="w-full bg-brandRed text-white py-6 rounded-[32px] font-black text-xl uppercase italic transition-all hover:bg-brandRed/90 hover:scale-[1.02] active:scale-95 shadow-2xl shadow-brandRed/20">Initialize Consultation</button>
+              <button className="w-full bg-brandRed text-black py-6 rounded-[32px] font-black text-xl uppercase italic transition-all hover:bg-brandRed/90 hover:scale-[1.02] active:scale-95 shadow-2xl shadow-brandRed/20">Initialize Consultation</button>
             </form>
           </div>
         </div>

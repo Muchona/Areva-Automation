@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   Box, 
@@ -54,7 +53,7 @@ const DesignSystem: React.FC = () => {
 
   const designTokens = {
     colors: {
-      brandRed: "#E31E24",
+      brandRed: "#A3E635",
       background: "#020617",
       surface: "#0F172A",
       border: "#1E293B",
@@ -69,7 +68,7 @@ const DesignSystem: React.FC = () => {
     setTimeout(() => setCopiedId(null), 2000);
   };
 
-  const moffettLogoSvg = `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" rx="20" fill="#E31E24"/><path d="M30 30H70V70H30V30Z" fill="white" fill-opacity="0.2"/><path d="M40 40H60V60H40V40Z" fill="white"/></svg>`;
+  const moffettLogoSvg = `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" rx="20" fill="#A3E635"/><path d="M30 30H70V70H30V30Z" fill="black" fill-opacity="0.2"/><path d="M40 40H60V60H40V40Z" fill="black"/></svg>`;
 
   return (
     <div className={`min-h-screen transition-colors duration-500 ${wireframe ? 'bg-white text-black' : 'bg-slate-950 text-white'} pt-32 pb-64 px-4 sm:px-6 lg:px-8`}>
@@ -120,7 +119,7 @@ const DesignSystem: React.FC = () => {
                   onClick={() => handleCopy('logo-svg', moffettLogoSvg)}
                   className={`p-3 rounded-xl transition-all ${wireframe ? 'bg-slate-200 hover:bg-slate-300' : 'bg-slate-800 hover:bg-slate-700 text-brandRed'}`}
                 >
-                  {copiedId === 'logo-svg' ? <Check className="w-5 h-5" /> : <Copy className="w-5 h-5" />}
+                  {copiedId === 'logo-svg' ? <Check className="w-5 h-5 text-black" /> : <Copy className="w-5 h-5 text-black" />}
                 </button>
               </div>
               <div className="flex items-center justify-center p-12 bg-slate-950/50 rounded-2xl border border-white/5 mb-6">
@@ -162,7 +161,7 @@ const DesignSystem: React.FC = () => {
         <section className="space-y-12">
           <h2 className="text-3xl font-black uppercase tracking-tight border-b border-current/10 pb-4">02. Visual Styles</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-            <ColorTile color="bg-brandRed" name="Brand Red" hex="#E31E24" wireframe={wireframe} />
+            <ColorTile color="bg-brandRed" name="Brand Green" hex="#A3E635" wireframe={wireframe} />
             <ColorTile color="bg-slate-950" name="Slate 950" hex="#020617" wireframe={wireframe} />
             <ColorTile color="bg-slate-900" name="Slate 900" hex="#0F172A" wireframe={wireframe} />
             <ColorTile color="bg-slate-800" name="Slate 800" hex="#1E293B" wireframe={wireframe} />
@@ -199,8 +198,8 @@ const DesignSystem: React.FC = () => {
             <div className={`p-10 rounded-[40px] border ${wireframe ? 'bg-white border-slate-200' : 'bg-slate-900 border-slate-800'}`}>
               <p className="text-[10px] font-black text-brandRed uppercase tracking-widest mb-6">Action Button</p>
               <div className="flex items-center space-x-6">
-                <button className={`px-10 py-5 rounded-2xl font-black text-lg flex items-center ${wireframe ? 'border-2 border-black' : 'bg-brandRed text-white shadow-xl shadow-brandRed/20'}`}>
-                  Primary Action <ArrowRight className="ml-2 w-6 h-6" />
+                <button className={`px-10 py-5 rounded-2xl font-black text-lg flex items-center ${wireframe ? 'border-2 border-black' : 'bg-brandRed text-black shadow-xl shadow-brandRed/20'}`}>
+                  Primary Action <ArrowRight className="ml-2 w-6 h-6 text-black" />
                 </button>
                 <div className="text-[10px] font-mono text-slate-500 space-y-1">
                   <p>Height: 64px</p>

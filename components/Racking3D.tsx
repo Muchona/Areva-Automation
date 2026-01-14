@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
@@ -17,7 +16,7 @@ const Racking3D: React.FC = () => {
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
 
-    const pointLight = new THREE.PointLight(0xe31e24, 2, 50);
+    const pointLight = new THREE.PointLight(0xA3E635, 2, 50);
     pointLight.position.set(10, 10, 10);
     scene.add(pointLight);
 
@@ -51,7 +50,7 @@ const Racking3D: React.FC = () => {
     scene.add(rackingGroup);
 
     // Animated Shuttle (The Taxi)
-    const shuttle = new THREE.Mesh(new THREE.BoxGeometry(1.4, 0.3, 1), new THREE.MeshStandardMaterial({ color: 0xe31e24, emissive: 0xe31e24, emissiveIntensity: 0.5 }));
+    const shuttle = new THREE.Mesh(new THREE.BoxGeometry(1.4, 0.3, 1), new THREE.MeshStandardMaterial({ color: 0xA3E635, emissive: 0xA3E635, emissiveIntensity: 0.5 }));
     scene.add(shuttle);
 
     camera.position.set(15, 10, 15);

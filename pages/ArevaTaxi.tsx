@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Zap, Target, ThermometerSnowflake, Shield, ArrowRight } from 'lucide-react';
@@ -7,7 +6,7 @@ const ArevaTaxi: React.FC = () => {
   return (
     <div className="bg-slate-950 text-white pt-32">
       <section className="relative py-24 px-4 overflow-hidden border-b border-slate-900">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_-20%,rgba(227,30,36,0.15),transparent_70%)]"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_-20%,rgba(163,230,53,0.15),transparent_70%)]"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
@@ -20,8 +19,8 @@ const ArevaTaxi: React.FC = () => {
               <p className="text-xl text-slate-400 font-medium leading-relaxed max-w-xl">
                 The flagship of our fleet. A high-performance 4-way shuttle designed for demanding deep-lane environments.
               </p>
-              <Link to="/contact" className="inline-flex items-center bg-brandRed px-10 py-5 rounded-2xl font-black text-lg transition-all shadow-xl shadow-brandRed/20">
-                Book Site Audit <ArrowRight className="ml-2 w-5 h-5" />
+              <Link to="/contact" className="inline-flex items-center bg-brandRed text-black px-10 py-5 rounded-2xl font-black text-lg transition-all shadow-xl shadow-brandRed/20">
+                Book Site Audit <ArrowRight className="ml-2 w-5 h-5 text-black" />
               </Link>
             </div>
             <div className="relative rounded-[40px] overflow-hidden border border-slate-800 bg-slate-900 p-8">

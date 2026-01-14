@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Factory, Truck, UserCheck, ShieldCheck, ArrowRight, Settings, CheckCircle2, Ruler } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -53,9 +52,9 @@ const InstallationService: React.FC = () => {
                 </div>
               ))}
             </div>
-            <Link to="/contact" className="inline-flex items-center space-x-3 bg-brandRed px-10 py-5 rounded-2xl font-black text-lg shadow-xl shadow-brandRed/20 hover:scale-105 transition-all">
+            <Link to="/contact" className="inline-flex items-center space-x-3 bg-brandRed text-black px-10 py-5 rounded-2xl font-black text-lg shadow-xl shadow-brandRed/20 hover:scale-105 transition-all">
               <span>Book Site Assessment</span>
-              <ArrowRight className="w-6 h-6" />
+              <ArrowRight className="w-6 h-6 text-black" />
             </Link>
           </div>
           <div className="relative group">

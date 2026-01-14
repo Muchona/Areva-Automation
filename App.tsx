@@ -62,7 +62,7 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <div className="min-h-screen bg-slate-950 flex flex-col relative selection:bg-brandRed selection:text-white">
+      <div className="min-h-screen bg-slate-950 flex flex-col relative selection:bg-brandRed selection:text-black">
         <CustomCursor />
         <Spotlight />
         <Navbar />

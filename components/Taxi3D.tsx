@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import gsap from 'gsap';
@@ -81,7 +80,7 @@ const Taxi3D: React.FC<Taxi3DProps> = ({ progress = 1 }) => {
     keyLight.position.set(5, 12, 5);
     scene.add(keyLight);
 
-    const spotLight = new THREE.SpotLight(0xe31e24, 450);
+    const spotLight = new THREE.SpotLight(0xA3E635, 450);
     spotLight.position.set(8, 15, 8);
     spotLight.angle = Math.PI / 8;
     spotLight.penumbra = 0.6;
@@ -92,7 +91,7 @@ const Taxi3D: React.FC<Taxi3DProps> = ({ progress = 1 }) => {
     scene.add(blueRim);
 
     const brandRedMat = new THREE.MeshStandardMaterial({ 
-      color: 0xe31e24, metalness: 0.85, roughness: 0.15, emissive: 0xe31e24, emissiveIntensity: 0.08
+      color: 0xA3E635, metalness: 0.85, roughness: 0.15, emissive: 0xA3E635, emissiveIntensity: 0.08
     });
     const onyxMat = new THREE.MeshStandardMaterial({ 
       color: 0x0f172a, metalness: 1, roughness: 0.12, emissive: 0x3b82f6, emissiveIntensity: 0

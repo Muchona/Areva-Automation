@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { X, Send, Bot, Loader2, Sparkles, Mic, Waves } from 'lucide-react';
 import { GoogleGenAI, LiveServerMessage, Modality } from '@google/genai';
@@ -147,14 +146,14 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ isOpen, setIsOpen }) => {
   return (
     <div className="fixed bottom-8 right-8 z-[100]">
       {!isOpen ? (
-        <button onClick={() => setIsOpen(true)} className="bg-brandRed text-white p-5 rounded-full shadow-2xl hover:scale-110 transition-all active:scale-95">
+        <button onClick={() => setIsOpen(true)} className="bg-brandRed text-black p-5 rounded-full shadow-2xl hover:scale-110 transition-all active:scale-95">
           <Sparkles className="w-6 h-6 animate-pulse" />
         </button>
       ) : (
         <div className="bg-slate-900 rounded-[32px] shadow-3xl w-[380px] sm:w-[420px] flex flex-col border border-slate-800 animate-in fade-in zoom-in slide-in-from-bottom-10">
           <div className="bg-slate-950 p-6 flex justify-between items-center border-b border-white/5">
             <div className="flex items-center space-x-3">
-              <div className="bg-brandRed p-2 rounded-xl"><Bot className="w-5 h-5 text-white" /></div>
+              <div className="bg-brandRed p-2 rounded-xl"><Bot className="w-5 h-5 text-black" /></div>
               <div>
                 <p className="font-black text-[10px] uppercase tracking-widest text-white">Areva Expert</p>
                 <div className="flex items-center space-x-1.5">
@@ -182,7 +181,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ isOpen, setIsOpen }) => {
             ) : (
               messages.map((m, i) => (
                 <div key={i} className={`flex ${m.role === MessageRole.USER ? 'justify-end' : 'justify-start'}`}>
-                  <div className={`max-w-[85%] p-4 rounded-2xl text-sm leading-relaxed ${m.role === MessageRole.USER ? 'bg-brandRed text-white rounded-tr-none' : 'bg-slate-800 text-slate-200 rounded-tl-none border border-white/5'}`}>
+                  <div className={`max-w-[85%] p-4 rounded-2xl text-sm leading-relaxed ${m.role === MessageRole.USER ? 'bg-brandRed text-black rounded-tr-none' : 'bg-slate-800 text-slate-200 rounded-tl-none border border-white/5'}`}>
                     {m.text}
                   </div>
                 </div>
@@ -202,7 +201,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ isOpen, setIsOpen }) => {
             <div className="p-6 bg-slate-900 border-t border-white/5 flex space-x-3">
               <button onClick={startVoiceSession} className="bg-slate-800 p-4 rounded-2xl text-slate-400 hover:text-brandRed transition-all"><Mic className="w-5 h-5" /></button>
               <input type="text" value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && handleSend()} placeholder="Ask about ASRS density..." className="flex-grow bg-slate-950 rounded-2xl px-6 py-4 text-sm font-medium outline-none text-white border-none" />
-              <button onClick={handleSend} disabled={isLoading} className="bg-brandRed text-white p-4 rounded-2xl hover:bg-brandRed/90 disabled:opacity-50"><Send className="w-5 h-5" /></button>
+              <button onClick={handleSend} disabled={isLoading} className="bg-brandRed text-black p-4 rounded-2xl hover:bg-brandRed/90 disabled:opacity-50"><Send className="w-5 h-5" /></button>
             </div>
           )}
         </div>
