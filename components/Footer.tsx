@@ -29,9 +29,11 @@ const Footer: React.FC = () => {
       ]
     },
     {
-      title: "Technical",
+      title: "Services",
       links: [
         { name: "Consultancy", path: "/services/consultancy" },
+        { name: "Installation", path: "/services/installation" },
+        { name: "Maintenance", path: "/services/maintenance" },
         { name: "Engineering Standards", path: "/engineering-standards" }
       ]
     },
@@ -41,8 +43,8 @@ const Footer: React.FC = () => {
         { name: "About Our Story", path: "/about" },
         { name: "Careers", path: "/careers" },
         { name: "News & Logs", path: "/news" },
-        { name: "Why Work With Us", path: "/why-us" },
-        { name: "Case Studies", path: "/cases" }
+        { name: "Developer Portal", path: "/developer" },
+        { name: "Design System", path: "/design" }
       ]
     }
   ];

@@ -1,9 +1,8 @@
-
 import React, { Suspense, lazy, useState } from 'react';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
 
-// Core UI Components (Direct Import for immediate layout)
+// Core UI Components
 import Navbar from './components/Navbar.tsx';
 import Footer from './components/Footer.tsx';
 import AIAssistant from './components/AIAssistant.tsx';
@@ -22,6 +21,19 @@ const News = lazy(() => import('./pages/News.tsx'));
 const WhyWorkWithUs = lazy(() => import('./pages/WhyWorkWithUs.tsx'));
 const EngineeringStandards = lazy(() => import('./pages/EngineeringStandards.tsx'));
 
+// Service Pages
+const InstallationService = lazy(() => import('./pages/InstallationService.tsx'));
+const MaintenanceService = lazy(() => import('./pages/MaintenanceService.tsx'));
+const ConsultancyService = lazy(() => import('./pages/ConsultancyService.tsx'));
+
+// Extra/Showcase Pages
+const DeveloperPortal = lazy(() => import('./pages/DeveloperPortal.tsx'));
+const DesignSystem = lazy(() => import('./pages/DesignSystem.tsx'));
+const PortfolioShowcase = lazy(() => import('./pages/PortfolioShowcase.tsx'));
+const BehanceCaseStudy = lazy(() => import('./pages/BehanceCaseStudy.tsx'));
+const BehanceBuilder = lazy(() => import('./pages/BehanceBuilder.tsx'));
+const BehanceEmbed = lazy(() => import('./pages/BehanceEmbed.tsx'));
+
 // Product Pages
 const ArevaTaxi = lazy(() => import('./pages/ArevaTaxi.tsx'));
 const ArevaVTU = lazy(() => import('./pages/ArevaVTU.tsx'));
@@ -35,9 +47,6 @@ const ColdStorage = lazy(() => import('./pages/ColdStorage.tsx'));
 const ManufacturingSector = lazy(() => import('./pages/ManufacturingSector.tsx'));
 const LogisticsSector = lazy(() => import('./pages/LogisticsSector.tsx'));
 const PharmaSector = lazy(() => import('./pages/PharmaSector.tsx'));
-
-// Service Pages
-const ConsultancyService = lazy(() => import('./pages/ConsultancyService.tsx'));
 
 const PageLoader = () => (
   <div className="h-screen flex flex-col items-center justify-center bg-slate-950">
@@ -89,6 +98,16 @@ const App: React.FC = () => {
 
               {/* Service Routes */}
               <Route path="/services/consultancy" element={<ConsultancyService />} />
+              <Route path="/services/installation" element={<InstallationService />} />
+              <Route path="/services/maintenance" element={<MaintenanceService />} />
+              
+              {/* Dev & Showcase Routes */}
+              <Route path="/developer" element={<DeveloperPortal />} />
+              <Route path="/design" element={<DesignSystem />} />
+              <Route path="/showcase" element={<PortfolioShowcase />} />
+              <Route path="/showcase/case-study" element={<BehanceCaseStudy />} />
+              <Route path="/showcase/builder" element={<BehanceBuilder />} />
+              <Route path="/showcase/embed" element={<BehanceEmbed />} />
               
               {/* Catch-all */}
               <Route path="*" element={<Navigate to="/" replace />} />

@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Box, Shield, Zap, Globe, Users, Play, Newspaper, Mail, Briefcase, Info, Sun, Moon, Snowflake, Factory, Truck, Microscope, HelpCircle, Download, Loader2 } from 'lucide-react';
+import { Menu, X, ChevronDown, Box, Shield, Zap, Globe, Users, Play, Newspaper, Mail, Briefcase, Info, Sun, Moon, Snowflake, Factory, Truck, Microscope, HelpCircle, Download, Loader2, Wrench, Settings } from 'lucide-react';
 import JSZip from 'jszip';
 import * as FileSaver from 'file-saver';
 
@@ -100,9 +100,11 @@ const Navbar: React.FC = () => {
       ]
     },
     {
-      title: 'Technical',
+      title: 'Services',
       items: [
         { name: 'Consultancy & Design', path: '/services/consultancy', icon: <Info className="w-4 h-4" /> },
+        { name: 'Installation & Fab', path: '/services/installation', icon: <Settings className="w-4 h-4" /> },
+        { name: 'Maintenance & Support', path: '/services/maintenance', icon: <Wrench className="w-4 h-4" /> },
         { name: 'Engineering Standards', path: '/engineering-standards', icon: <Shield className="w-4 h-4" /> },
       ]
     },
@@ -111,6 +113,7 @@ const Navbar: React.FC = () => {
       items: [
         { name: 'Case Studies', path: '/cases', icon: <Box className="w-4 h-4" /> },
         { name: 'Video Library', path: '/videos', icon: <Play className="w-4 h-4" /> },
+        { name: 'Interactive Portfolio', path: '/showcase', icon: <Globe className="w-4 h-4" /> },
       ]
     },
     {
