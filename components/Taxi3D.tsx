@@ -64,18 +64,16 @@ const Taxi3D: React.FC<Taxi3DProps> = ({ progress = 1 }) => {
     const height = containerRef.current.clientHeight;
 
     const scene = new THREE.Scene();
-    // Narrow FOV (24) acts as a telephoto lens, centering parts more tightly
     const camera = new THREE.PerspectiveCamera(24, width / height, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setClearColor(0x000000, 0); // Explicit transparency
+    renderer.setClearColor(0x000000, 0); 
     containerRef.current.appendChild(renderer.domElement);
 
     const raycaster = new THREE.Raycaster();
 
-    // High-Contrast Lighting
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.45);
     scene.add(ambientLight);
 
@@ -93,7 +91,6 @@ const Taxi3D: React.FC<Taxi3DProps> = ({ progress = 1 }) => {
     blueRim.position.set(-10, -8, -10);
     scene.add(blueRim);
 
-    // High-Contrast Materials
     const brandRedMat = new THREE.MeshStandardMaterial({ 
       color: 0xe31e24, metalness: 0.85, roughness: 0.15, emissive: 0xe31e24, emissiveIntensity: 0.08
     });
@@ -110,12 +107,11 @@ const Taxi3D: React.FC<Taxi3DProps> = ({ progress = 1 }) => {
     const taxiGroup = new THREE.Group();
     scene.add(taxiGroup);
 
-    // Geometries - Explosion coordinates significantly reduced (50% cut)
     const chassis = new THREE.Mesh(new THREE.BoxGeometry(3.0, 0.22, 2.2), onyxMat);
     chassis.userData = { 
       partKey: 'chassis', 
       targetPos: new THREE.Vector3(0, 0.11, 0),
-      explodedPos: new THREE.Vector3(0, -0.75, 0) // Strictly vertical drop
+      explodedPos: new THREE.Vector3(0, -0.75, 0)
     };
     taxiGroup.add(chassis);
 
@@ -123,13 +119,12 @@ const Taxi3D: React.FC<Taxi3DProps> = ({ progress = 1 }) => {
     topPlate.userData = { 
       partKey: 'topPlate',
       targetPos: new THREE.Vector3(0, 0.26, 0),
-      explodedPos: new THREE.Vector3(0, 1.5, 0) // Strictly vertical rise
+      explodedPos: new THREE.Vector3(0, 1.5, 0)
     };
     taxiGroup.add(topPlate);
 
     const wheelGeo = new THREE.CylinderGeometry(0.22, 0.22, 0.12, 32);
     wheelGeo.rotateZ(Math.PI / 2);
-    // ex/ez drift cut from 2.5/2 down to 1.25/1
     const wheelPositions = [
       {x:-1.1, z:0.7, ex:-1.25, ez:1}, {x:1.1, z:0.7, ex:1.25, ez:1}, 
       {x:-1.1, z:-0.7, ex:-1.25, ez:-1}, {x:1.1, z:-0.7, ex:1.25, ez:-1}
@@ -139,7 +134,7 @@ const Taxi3D: React.FC<Taxi3DProps> = ({ progress = 1 }) => {
       w.userData = { 
         partKey: 'wheel',
         targetPos: new THREE.Vector3(pos.x, 0.1, pos.z),
-        explodedPos: new THREE.Vector3(pos.ex, 0, pos.ez) // Horizontal only explosion
+        explodedPos: new THREE.Vector3(pos.ex, 0, pos.ez)
       };
       taxiGroup.add(w);
     });
@@ -148,11 +143,10 @@ const Taxi3D: React.FC<Taxi3DProps> = ({ progress = 1 }) => {
     pallet.userData = { 
       partKey: 'pallet',
       targetPos: new THREE.Vector3(0, 0.5, 0),
-      explodedPos: new THREE.Vector3(0, 3, 0) // Higher rise but strictly central
+      explodedPos: new THREE.Vector3(0, 3, 0)
     };
     taxiGroup.add(pallet);
 
-    // Pull camera back slightly to account for narrow FOV
     camera.position.set(15, 10, 15);
     camera.lookAt(0, 0.15, 0);
 
@@ -193,7 +187,8 @@ const Taxi3D: React.FC<Taxi3DProps> = ({ progress = 1 }) => {
       const elapsedTime = clock.current.getElapsedTime();
       const pulse = 0.3 + 0.3 * Math.sin(elapsedTime * 5);
       
-      taxiGroup.children.forEach(obj => {
+      taxiGroup.children.forEach((obj: THREE.Object3D) => {
+        if (!(obj instanceof THREE.Mesh)) return;
         const mesh = obj as THREE.Mesh;
         const mat = mesh.material as THREE.MeshStandardMaterial;
         if (obj.userData.targetPos && obj.userData.explodedPos) {

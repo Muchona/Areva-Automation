@@ -3,6 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { GoogleGenAI, Type } from "@google/genai";
 import { X, Calculator, Loader2, TrendingUp, DollarSign, ShieldCheck } from 'lucide-react';
 
+declare var process: {
+  env: {
+    API_KEY: string;
+    [key: string]: string | undefined;
+  };
+};
+
 interface SimulatorProps {
   onClose: () => void;
 }
